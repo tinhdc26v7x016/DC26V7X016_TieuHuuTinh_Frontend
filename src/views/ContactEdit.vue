@@ -45,6 +45,7 @@ export default {
         },
         async updateContact(data) {
             try {
+                console.log("ID:", this.contact._id);
                 await ContactService.update(this.contact._id, data);
                 alert('Liên hệ được cập nhật thành công.');
                 this.$router.push({ name: "contactbook" });
