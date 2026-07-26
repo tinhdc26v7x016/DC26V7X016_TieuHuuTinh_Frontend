@@ -27,8 +27,59 @@
         <div class="form-group form-check">
             <input name="favorite" type="checkbox" class="form-check-input" v-model="contactLocal.favorite" />
             <label for="favorite" class="form-check-label">
-            <strong>Liên hệ yêu thích</strong>
-            </label>
+            <div class="form-group mt-3">
+            <label><strong>Liên hệ yêu thích</strong></label>
+            <div class="form-check">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    id="family"
+                    value="Gia đình"
+                    v-model="contactLocal.category">
+                <label class="form-check-label" for="family">
+                    Gia đình
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    id="company"
+                    value="Cơ quan"
+                    v-model="contactLocal.category">
+                <label class="form-check-label" for="company">
+                    Cơ quan
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    id="friend"
+                    value="Bạn bè"
+                    v-model="contactLocal.category">
+                <label class="form-check-label" for="friend">
+                    Bạn bè
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    id="drinking"
+                    value="Bạn nhậu"
+                    v-model="contactLocal.category">
+                <label class="form-check-label" for="drinking">
+                    Bạn nhậu
+        </label>
+    </div>
+    </div>
+        
+        
+        </label>
         </div>
 
         <div class="form-group">

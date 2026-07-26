@@ -1,7 +1,14 @@
 import { createWebHistory, createRouter } from "vue-router";
 import ContactBook from "@/views/contactBook.vue";
+import Login from "@/views/Login.vue";
 
 const routes = [
+    {
+    path: "/login",
+    name: "login",
+    component: Login,
+    },
+    
     {
         path: "/",
         name: "contactbook",
@@ -33,5 +40,22 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 });
+
+router.beforeEach((to,from,next)=>{
+
+    const token=localStorage.getItem("token");
+
+    if(to.name!="login" && !token){
+
+        next("/login");
+
+    }else{
+
+        next();
+
+    }
+
+});
+
 
 export default router;
